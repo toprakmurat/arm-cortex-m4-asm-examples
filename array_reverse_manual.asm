@@ -1,9 +1,9 @@
-        AREA REVERSE_STACK_MANUAL, CODE, READONLY
+        AREA    REVERSE_STACK_MANUAL, CODE, READONLY
         ENTRY
         ALIGN
 
 __main  FUNCTION
-        EXPORT __main
+        EXPORT  __main
 
         LDR     R0, =Arr
         LDR     R1, =Result
@@ -29,21 +29,21 @@ pop_loop
         B       .
         ENDFUNC
 
-;---------------------------------
+; -------------------------------
 ; Data section
-;---------------------------------
-        AREA DATA_ARR, DATA, READONLY
-        EXPORT Arr
+; -------------------------------
+        AREA    DATA_ARR, DATA, READONLY
+        EXPORT  Arr
         ALIGN
 Arr
         DCD     1, 2, 3, 4
-        
-        AREA DATA_SEC, DATA, READWRITE
-        EXPORT Result
+
+        AREA    DATA_SEC, DATA, READWRITE
+        EXPORT  Result
         ALIGN
-Result      
+Result
         SPACE   16
-Stack_Mem   
+Stack_Mem
         SPACE   64
 Stack_Top
 
